@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :animes
-  has_secure_password
+  has_secure_password #authenticate method provided by Bcrypt
   validates :password, length: {minimum: 6}
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: URI::MailTo::Email_REGEXP}
