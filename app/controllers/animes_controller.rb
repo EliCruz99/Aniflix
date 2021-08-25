@@ -10,15 +10,15 @@ class AnimesController < ApplicationController
 
   # GET /animes/1
   def show
-    render json: @anime
+    render json: @anime, include: :categories
   end
 
   # POST /animes
   def create
     @anime = Anime.new(anime_params)
-
+    @anime.user = @current_user
     if @anime.save
-      render json: @anime, status: :created, location: @anime
+      render json: @anime, status: :created
     else
       render json: @anime.errors, status: :unprocessable_entity
     end
