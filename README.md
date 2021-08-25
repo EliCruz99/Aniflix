@@ -177,7 +177,7 @@ src
 
 #### ERD Model
 
-![Aniflix ERD](https://i.imgur.com/9ZhreQ1.png)
+![Aniflix ERD](https://i.imgur.com/CQKLhiu.png)
 
 <br>
 
