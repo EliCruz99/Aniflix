@@ -180,7 +180,8 @@ src
 
 #### ERD Model
 
-[Aniflix ERD](blob:https://imgur.com/cad6cfc5-689a-452c-b49f-eb0d7b35ac9e)
+![Aniflix ERD](https://i.imgur.com/Jc5CxAI.png)
+
 <br>
 
 ***
