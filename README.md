@@ -84,18 +84,15 @@ _**Aniflix** is a fullstack application that allows users to browse a collection
 
 - Desktop Category Page
 
-![Create Page](https://i.imgur.com/nco9eYX.png)
+![Create Page](https://i.imgur.com/OcI8Oy1.png)
 
-- Desktop Create Page
+- Desktop Create/Edit Page
 
-![Favorites Page](https://i.imgur.com/DLSsj0K.png)
-
-- Desktop Favorites Page
 
 #### Component Tree
 
 
-![Component Tree](https://i.imgur.com/vDwyJiV.png)
+![Component Tree](https://i.imgur.com/w4ovsIU.png)
 
 #### Component Architecture
 
@@ -180,7 +177,7 @@ src
 
 #### ERD Model
 
-![Aniflix ERD](https://i.imgur.com/Jc5CxAI.png)
+![Aniflix ERD](https://i.imgur.com/9ZhreQ1.png)
 
 <br>
 
@@ -190,7 +187,8 @@ src
 
 - Use websocket to create direct messaging between users
 - Users can click on other user profiles to see their favorites
-- integrade a video player so trailers play for the anime on the details page  
+- integrade a video player so trailers play for the anime on the details page
+- _Allow users to favorite animes so they can view them at a later time_  
 
 ***
 
