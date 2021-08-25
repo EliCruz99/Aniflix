@@ -41,6 +41,12 @@ _**Aniflix** is a fullstack application that allows users to browse a collection
 - _Learn TailwindCSS so I can utilize it in future projects._
 - _Create a RESTfulish API_
 
+### Challenges
+
+- _Setting up custom routes_
+- _Creating the Main Container_
+- _figuring out custom routing on frontend_
+
 <br>
 
 ### Libraries and Dependencies
