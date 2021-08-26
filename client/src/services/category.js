@@ -8,6 +8,7 @@ export const getAllCategories = async () => {
     throw e
   }
 }
+console.log(getAllCategories())
   
 export const getCategory = async(categoryId) => {
   try {

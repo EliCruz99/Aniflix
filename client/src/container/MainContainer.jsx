@@ -2,8 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 
-import { getAllAnime, getAnime, postAnime, putAnime, deleteAnime } from '../services/anime'
-import { getAllCategories, getCategory } from '../services/category'
+import { getAllAnime, postAnime, putAnime, deleteAnime } from '../services/anime'
+import { getAllCategories } from '../services/category'
 import AllAnime from '../screens/AllAnime/AllAnime'
 import AnimeCategory from '../screens/AnimeCategory/AnimeCategory'
 import AnimeCreate from '../screens/AnimeCreate/AnimeCreate'
@@ -11,12 +11,10 @@ import AnimeDetail from '../screens/AnimeDetail/AnimeDetail'
 import Favorites from '../screens/Favorites/Favorites'
 import Home from '../screens/Home/Home'
 import AnimeEdit from '../screens/AnimeEdit/AnimeEdit'
-import { ForegroundColor } from 'jest-matcher-utils/node_modules/chalk'
-import { formatDiagnostic } from 'typescript'
 
 export default function MainContainer() {
   const [anime, setAnime] = useState([])
-  const [category, setCategory] = useState([])
+  const [allCategory, setAllCategory] = useState([])
   const history = useHistory()
 
   useEffect(() => {
@@ -30,7 +28,7 @@ export default function MainContainer() {
   useEffect(() => {
     const fetchCategory = async () => {
       const categoryList = await getAllCategories()
-      setCategory(categoryList)
+      setAllCategory(categoryList)
     }
     fetchCategory()
   }, [])
@@ -62,25 +60,25 @@ export default function MainContainer() {
     <div>
       <Switch>
         <Route path='/category'>
-          <AnimeCategory/>
+          <AnimeCategory category={allCategory}/>
         </Route>
         <Route path='/anime/:id/edit'>
-          <AnimeEdit/>
+          <AnimeEdit anime={anime} handleUpdate={handleUpdate}/>
         </Route>
         <Route path='/anime/new'>
-          <AnimeCreate/>
+          <AnimeCreate category={allCategory} handleCreate={handleCreate}/>
         </Route>
         <Route path='/anime/:id'>
-          <AnimeDetail/>
+          <AnimeDetail anime={anime}/>
         </Route>
         <Route path='/anime'>
-          <AllAnime/>
+          <AllAnime anime={anime}/>
         </Route>
         <Route path='/favorites/:id'>
-          <Favorites/>
+          <Favorites anime={anime}/>
         </Route>
         <Route path='/home'>
-          <Home/>
+          <Home anime={anime}/>
         </Route>
       </Switch>
     </div>

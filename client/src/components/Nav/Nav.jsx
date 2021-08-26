@@ -7,22 +7,22 @@ export default function Nav(props) {
 
   return (
   <div>
-    <nav>
+    <nav className='flex flex-row'>
       {currentUser ? (
         <div>
-          <p className="">{currentUser.username}</p>
+          <p className="mr-1">{currentUser.username}</p>
           <button className="" onClick={handleLogout}>Logout</button>
         </div>
         ) : (
-            <div className="">
+            <div className="mr-1">
               <Link to='/login'>Login</Link>
               <Link to='/register'>Register</Link>
             </div>
         )}
-        <Link to='/anime' className="">Anime</Link>
+        <Link to='/anime' className="mr-1">Anime</Link>
         {currentUser && (
           <div>
-            <Link to='/anime/new' className="">Make new Anime</Link>
+            <Link to='/anime/new' className="ml-1">Make new Anime</Link>
           </div>
         )}
           </nav>

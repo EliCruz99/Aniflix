@@ -1,11 +1,13 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 export default function SignIn({ handleLogin }) {
   const [formData, setFormData] = useState({
     username: '',
     password: ''
   })
-  const [error, setError] = useState(handleLogin().error)
+  const [error, setError] = useState('')
+
+  console.log()
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -18,6 +20,7 @@ export default function SignIn({ handleLogin }) {
         <form className="" onSubmit={(e) => {
           e.preventDefault()
           handleLogin(formData)
+          console.log(handleLogin())
         }}>
           <label className=''>
             <h3 className="">Username:</h3>
@@ -37,7 +40,6 @@ export default function SignIn({ handleLogin }) {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              onError='your password is dumb'
             />
           </label>
           <button className="">Login</button>

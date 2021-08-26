@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function AllAnime() {
+export default function AllAnime({ anime }) {
+  
+
   return (
-    <div>
-      
+    <div>   
     </div>
   )
 }
