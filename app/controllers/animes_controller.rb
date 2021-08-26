@@ -10,7 +10,8 @@ class AnimesController < ApplicationController
 
   # GET /animes/1
   def show
-    render json: @anime, include: :categories
+    @category = Category.where(@anime.category_id== params[:id])
+    render json: @anime, include: :category
   end
 
   # POST /animes

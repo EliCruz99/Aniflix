@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :index]
+  before_action :set_category, only: [:show]
 
   # GET /categories
   def index
@@ -13,21 +13,9 @@ class CategoriesController < ApplicationController
     render json: @category, include: :animes
   end
 
-  def add_to_anime
-    @anime = Anime.find(params[:anime_id])
-    @anime.categories << @category
-  end
-
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def category_params
-      params.require(:category).permit(:name)
     end
 end
