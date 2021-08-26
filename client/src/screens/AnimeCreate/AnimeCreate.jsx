@@ -20,7 +20,6 @@ export default function AnimeCreate({handleCreate, allCategories}) {
       [name]: value
     }))
   }
-  console.log(allCategories)
   return (
     <div>
       <form
@@ -62,7 +61,7 @@ export default function AnimeCreate({handleCreate, allCategories}) {
         <label className="">
           <select name="category" value={category} className="border">
             <option value="">Genre</option>
-            {allCategories?.map((cat) => {
+            {allCategories.map((cat) => {
               return (
                 <option>{cat.name}</option>
               )

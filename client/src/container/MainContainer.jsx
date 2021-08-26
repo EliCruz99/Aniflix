@@ -14,7 +14,7 @@ import AnimeEdit from '../screens/AnimeEdit/AnimeEdit'
 
 export default function MainContainer() {
   const [anime, setAnime] = useState([])
-  const [allCategory, setAllCategory] = useState([])
+  const [allCategories, setAllCategories] = useState([])
   const history = useHistory()
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function MainContainer() {
   useEffect(() => {
     const fetchCategory = async () => {
       const categoryList = await getAllCategories()
-      setAllCategory(categoryList)
+      setAllCategories(categoryList)
     }
     fetchCategory()
   }, [])
@@ -60,13 +60,13 @@ export default function MainContainer() {
     <div>
       <Switch>
         <Route path='/category'>
-          <AnimeCategory category={allCategory}/>
+          <AnimeCategory categories={allCategories}/>
         </Route>
         <Route path='/anime/:id/edit'>
           <AnimeEdit anime={anime} handleUpdate={handleUpdate}/>
         </Route>
         <Route path='/anime/new'>
-          <AnimeCreate category={allCategory} handleCreate={handleCreate}/>
+          <AnimeCreate allCategories={allCategories} handleCreate={handleCreate}/>
         </Route>
         <Route path='/anime/:id'>
           <AnimeDetail anime={anime}/>
