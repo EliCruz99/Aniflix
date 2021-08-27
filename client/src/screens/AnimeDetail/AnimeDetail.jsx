@@ -1,8 +1,9 @@
 import { useParams } from 'react-router'
 import { getAnime } from '../../services/anime'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-export default function AnimeDetail() {
+export default function AnimeDetail({currentUser}) {
   const [currentAnime, setCurrentAnime] = useState(null)
   const { id } = useParams()
 
@@ -14,15 +15,20 @@ export default function AnimeDetail() {
     }
     anime()
   }, [id])
-  
-  console.log(currentAnime)
+
+  const userCreatedAnime = () => {
+    if (currentUser?.id === currentAnime?.user_id) {
+      return <Link to={`/anime/${currentAnime?.id}/edit`}><button>Edit</button></Link>
+    }
+  }
 
   return (
     <div>
+      {userCreatedAnime()}
       <p className="">{currentAnime?.name}</p>
       <p className="">{currentAnime?.category.name}</p>
       <img src={currentAnime?.img_url} alt="" className="" />
-      <a href={currentAnime?.watch_link} className=""><button className="border">WatchNow!</button></a>
+      <a href={currentAnime?.watch_link} target="_blank" className=""><button className="border">WatchNow!</button></a>
       <p className="">{currentAnime?.description}</p>
 
     </div>
