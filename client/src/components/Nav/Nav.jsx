@@ -19,7 +19,7 @@ export default function Nav(props) {
               <Link to='/register'>Register</Link>
             </div>
         )}
-        <Link to='/anime' className="mr-1">Anime</Link>
+        <Link to='/home' className="mr-1">Home</Link>
         {currentUser && (
           <div>
             <Link to='/anime/new' className="ml-1">Make new Anime</Link>
