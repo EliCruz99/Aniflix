@@ -18,19 +18,23 @@ export default function AnimeDetail({currentUser}) {
 
   const userCreatedAnime = () => {
     if (currentUser?.id === currentAnime?.user_id) {
-      return <Link to={`/anime/${currentAnime?.id}/edit`}><button>Edit</button></Link>
+      return <Link to={`/anime/${currentAnime?.id}/edit`} className='flex justify-end'><button>Edit</button></Link>
     }
   }
 
   return (
-    <div>
+    <div className='flex flex-col justify-center content-center'>
+      <div className=" bg-gray-400 flex">
+      <img src={currentAnime?.img_url} alt={currentAnime?.name} className="flex max-w-lg" />
+      <div className="bg-red-500">
       {userCreatedAnime()}
-      <p className="">{currentAnime?.name}</p>
-      <p className="">{currentAnime?.category.name}</p>
-      <img src={currentAnime?.img_url} alt="" className="" />
-      <a href={currentAnime?.watch_link} target="_blank" className=""><button className="border">WatchNow!</button></a>
+      <p className="flex justify-end">{currentAnime?.name}</p>
+      <p className="flex justify-end">{currentAnime?.category.name}</p>
+      <a href={currentAnime?.watch_link} target="_blank" className="flex justify-end"><button className="border">WatchNow!</button></a>
+      </div>
+      </div>
       <p className="">{currentAnime?.description}</p>
-
+      <div className="bg-purple-600 flex justify-center">p</div>
     </div>
   )
 }

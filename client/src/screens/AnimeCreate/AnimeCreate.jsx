@@ -63,7 +63,7 @@ export default function AnimeCreate({handleCreate, allCategories}) {
             <option value="category">Genre</option>
             {allCategories.map((cat) => {
               return (
-                <option id={cat.id} name='category' value={Number(cat.id)}>{cat.name}</option>
+                <option key={cat.id} name='category' value={Number(cat.id)}>{cat.name}</option>
               )
             })}
           </select>
