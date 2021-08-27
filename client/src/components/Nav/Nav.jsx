@@ -23,6 +23,7 @@ export default function Nav(props) {
         {currentUser && (
           <div>
             <Link to='/anime/new' className="ml-1">Make new Anime</Link>
+            <Link to={`/profile/${currentUser.username}`} className="ml-1">Profile</Link>
           </div>
         )}
           </nav>

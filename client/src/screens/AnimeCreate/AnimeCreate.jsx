@@ -6,12 +6,11 @@ export default function AnimeCreate({handleCreate, allCategories}) {
     name: '',
     description: '',
     img_url: '',
-    watch_url: '',
-    category: ''
+    watch_link: '',
+    category_id: ''
   })
-  const { name, description, img_url, watch_url, category } = formData
+  const { name, description, img_url, watch_link, category_id } = formData
   
-
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -36,6 +35,7 @@ export default function AnimeCreate({handleCreate, allCategories}) {
             name='name'
             value={name}
             onChange={handleChange}
+            required
           />
         </label>
         <label className="">
@@ -49,21 +49,21 @@ export default function AnimeCreate({handleCreate, allCategories}) {
           />
         </label>
         <label className="">
-          <h3 className="">Watch URL</h3>
+          <h3 className="">Watch Link</h3>
           <input
             type="text"
             className="border"
-            name='watch_url'
-            value={watch_url}
+            name='watch_link'
+            value={watch_link}
             onChange={handleChange}
           />
         </label>
         <label className="">
-          <select name="category" value={category} className="border">
-            <option value="">Genre</option>
+          <select name="category_id" value={category_id} className="border" onChange={handleChange} required>
+            <option value="category">Genre</option>
             {allCategories.map((cat) => {
               return (
-                <option>{cat.name}</option>
+                <option id={cat.id} name='category' value={Number(cat.id)}>{cat.name}</option>
               )
             })}
           </select>

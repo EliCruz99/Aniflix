@@ -8,19 +8,19 @@ import AllAnime from '../screens/AllAnime/AllAnime'
 import AnimeCategory from '../screens/AnimeCategory/AnimeCategory'
 import AnimeCreate from '../screens/AnimeCreate/AnimeCreate'
 import AnimeDetail from '../screens/AnimeDetail/AnimeDetail'
-import Favorites from '../screens/Favorites/Favorites'
+import Created from '../screens/Created/Created'
 import Home from '../screens/Home/Home'
 import AnimeEdit from '../screens/AnimeEdit/AnimeEdit'
 
-export default function MainContainer() {
-  const [anime, setAnime] = useState([])
+export default function MainContainer({currentUser}) {
+  const [allAnimes, setAllAnimes] = useState([])
   const [allCategories, setAllCategories] = useState([])
   const history = useHistory()
 
   useEffect(() => {
     const fetchAnime = async() => {
       const animeList = await getAllAnime()
-      setAnime(animeList)
+      setAllAnimes(animeList)
     }
     fetchAnime()
   }, [])
@@ -35,13 +35,13 @@ export default function MainContainer() {
   
   const handleCreate = async (formData) => {
     const animeData = await postAnime(formData)
-    setAnime((prevState) => [...prevState, animeData])
+    setAllAnimes((prevState) => [...prevState, animeData])
     history.push('/home')
   }
 
   const handleUpdate = async (id, formData) => {
     const animeData = await putAnime(id, formData)
-    setAnime((prevState) =>
+    setAllAnimes((prevState) =>
       prevState.map((anime) => {
       return anime.id === Number(id) ? animeData: anime 
     })
@@ -51,7 +51,7 @@ export default function MainContainer() {
 
   const handleDelete = async (id) => {
     await deleteAnime(id)
-    setAnime((prevState) => prevState.filter((anime) => anime.id !== id))
+    setAllAnimes((prevState) => prevState.filter((anime) => anime.id !== id))
   }
 
 
@@ -63,22 +63,19 @@ export default function MainContainer() {
           <AnimeCategory categories={allCategories}/>
         </Route>
         <Route path='/anime/:id/edit'>
-          <AnimeEdit anime={anime} handleUpdate={handleUpdate}/>
+          <AnimeEdit allAnimes={allAnimes}  handleDelete={handleDelete} handleUpdate={handleUpdate}/>
         </Route>
         <Route path='/anime/new'>
           <AnimeCreate allCategories={allCategories} handleCreate={handleCreate}/>
         </Route>
         <Route path='/anime/:id'>
-          <AnimeDetail anime={anime}/>
+          <AnimeDetail allAnime={allAnimes}/>
         </Route>
-        <Route path='/anime'>
-          <AllAnime anime={anime}/>
-        </Route>
-        <Route path='/favorites/:id'>
-          <Favorites anime={anime}/>
+        <Route path={`/profile/${currentUser?.username}`}>
+          <Created currentUser={currentUser}  allAnimes={allAnimes}/>
         </Route>
         <Route path='/home'>
-          <Home anime={anime}/>
+          <Home allAnimes={allAnimes}/>
         </Route>
       </Switch>
     </div>
