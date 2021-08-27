@@ -4,7 +4,6 @@ import { Switch, Route, useHistory } from 'react-router-dom'
 
 import { getAllAnime, postAnime, putAnime, deleteAnime } from '../services/anime'
 import { getAllCategories } from '../services/category'
-import AllAnime from '../screens/AllAnime/AllAnime'
 import AnimeCategory from '../screens/AnimeCategory/AnimeCategory'
 import AnimeCreate from '../screens/AnimeCreate/AnimeCreate'
 import AnimeDetail from '../screens/AnimeDetail/AnimeDetail'
@@ -46,7 +45,7 @@ export default function MainContainer({currentUser}) {
       return anime.id === Number(id) ? animeData: anime 
     })
     )
-    history.push()
+    history.push('/home')
   }
 
   const handleDelete = async (id) => {
@@ -63,13 +62,13 @@ export default function MainContainer({currentUser}) {
           <AnimeCategory categories={allCategories}/>
         </Route>
         <Route path='/anime/:id/edit'>
-          <AnimeEdit allAnimes={allAnimes}  handleDelete={handleDelete} handleUpdate={handleUpdate}/>
+          <AnimeEdit allAnimes={allAnimes} allCategories={allCategories}  handleDelete={handleDelete} handleUpdate={handleUpdate}/>
         </Route>
         <Route path='/anime/new'>
           <AnimeCreate allCategories={allCategories} handleCreate={handleCreate}/>
         </Route>
         <Route path='/anime/:id'>
-          <AnimeDetail allAnime={allAnimes}/>
+          <AnimeDetail allAnime={allAnimes} currentUser={currentUser}/>
         </Route>
         <Route path={`/profile/${currentUser?.username}`}>
           <Created currentUser={currentUser}  allAnimes={allAnimes}/>
