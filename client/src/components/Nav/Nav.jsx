@@ -7,11 +7,12 @@ export default function Nav(props) {
 
   return (
   <div>
-    <nav className='flex flex-row'>
+      <nav className='flex flex-row justify-evenly flex-nowrap'>
+        <Link className='mr-1' to='/home'>Aniflix</Link>
       {currentUser ? (
-        <div>
-          <p className="mr-1">{currentUser.username}</p>
-          <button className="" onClick={handleLogout}>Logout</button>
+        <div className='flex'>
+          <Link to={`/profile/${currentUser.username}`} className="mr-5"><p className="mr-1">{currentUser.username}</p></Link>
+          <button className="border ml-6" onClick={handleLogout}>Logout</button>
         </div>
         ) : (
             <div className="mr-1">
@@ -19,11 +20,9 @@ export default function Nav(props) {
               <Link to='/register'>Register</Link>
             </div>
         )}
-        <Link to='/home' className="mr-1">Home</Link>
         {currentUser && (
           <div>
             <Link to='/anime/new' className="ml-1">Make new Anime</Link>
-            <Link to={`/profile/${currentUser.username}`} className="ml-1">Profile</Link>
           </div>
         )}
           </nav>
