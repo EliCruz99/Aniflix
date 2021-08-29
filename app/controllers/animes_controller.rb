@@ -5,7 +5,7 @@ class AnimesController < ApplicationController
   def index
     @animes = Anime.all
 
-    render json: @animes
+    render json: @animes, include: :category
   end
 
   # GET /animes/1
