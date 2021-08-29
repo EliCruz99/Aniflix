@@ -6,7 +6,7 @@ export default function Layout(props) {
   const { currentUser, handleLogout } = props
 
   return (
-    <header>
+    <header className=' bg-palette-backgroundLight h-screen'>
       <Nav currentUser={currentUser} handleLogout={handleLogout}/>
       {props.children}
       <Footer/>
