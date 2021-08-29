@@ -45,7 +45,6 @@ export default function MainContainer({currentUser}) {
       return anime.id === Number(id) ? animeData: anime 
     })
     )
-    history.push('/home')
   }
 
   const handleDelete = async (id) => {
