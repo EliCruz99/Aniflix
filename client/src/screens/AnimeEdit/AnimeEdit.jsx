@@ -38,6 +38,11 @@ export default function AnimeEdit({ allAnimes, handleDelete, handleUpdate, allCa
     }))
   }
 
+  const handleSubmit = () => {
+    handleUpdate(id, formData)
+    history.push(`anime/${id}`)
+  }
+
   return (
     <div className='container mx-auto'>
         <div className="flex mb-28 mt-20">
@@ -76,11 +81,11 @@ export default function AnimeEdit({ allAnimes, handleDelete, handleUpdate, allCa
           />
         </label>
         <label className="">
-          <select name="category_id" value={category_id} className="shadow bg-palette-lightCard text-palette-fontOnDark mb-10 text-2xl items-baseline tracking-wide w-full" onChange={handleChange} required>
+          <select name="category_id" value={category_id} className="shadow bg-palette-lightCard text-palette-fontOnDark mb-10 text-2xl items-baseline tracking-wide w-" onChange={handleChange} required>
             <option value="category">Genre</option>
             {allCategories?.map((cat) => {
               return (
-                <option id={cat.id} name='category' value={Number(cat.id)}>{cat.name}</option>
+                <option key={cat.id} name='category' value={Number(cat.id)}>{cat.name}</option>
               )
             })}
           </select>
@@ -113,7 +118,8 @@ export default function AnimeEdit({ allAnimes, handleDelete, handleUpdate, allCa
             value={description}
             onChange={handleChange}
           />
-        <button className="" onClick={() => history.push(`anime/${id}`)}>Save</button>
+        <button type='submit' className=""
+          onClick={handleSubmit}>Save</button>
         <button className="" onClick={() => handleDelete(id)}>Delete</button>
       </form>
     </div>
