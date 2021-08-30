@@ -1,9 +1,6 @@
 import React from 'react'
 
 export default function Card({anime}) {
-
-  const categoryName = ''
-
   return (
     <div className='flex w-72 h-32 border-2'>
       <img src={anime.img_url} alt={anime.name} className="border-r-2 w-32 h-32" />
