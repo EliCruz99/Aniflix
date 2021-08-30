@@ -1,17 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Card from '../../components/AnimeCard/Card'
+import { useState } from 'react'
 
-export default function Home({ allAnimes }) {
+export default function Home({ allAnimes, allCategories }) {
   
-  console.log(allAnimes)
+
   return (
-    <div>
-      {allAnimes.map((anime) => {
-        return (
-          <Link to={`/anime/${anime.id}`}><Card anime={anime}/></Link>
-        )
-      })}
-    </div>
+  <>
+
+  </>
   )
 }
