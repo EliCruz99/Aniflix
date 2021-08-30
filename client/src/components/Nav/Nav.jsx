@@ -25,6 +25,7 @@ export default function Nav(props) {
             <Link to='/anime/new' className="ml-1 text-palette-font" >Make new Anime</Link>
           </div>
         )}
+        <Search/>
           </nav>
     </div>
   )
