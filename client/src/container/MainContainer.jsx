@@ -10,6 +10,7 @@ import AnimeDetail from '../screens/AnimeDetail/AnimeDetail'
 import Created from '../screens/Created/Created'
 import Home from '../screens/Home/Home'
 import AnimeEdit from '../screens/AnimeEdit/AnimeEdit'
+import Search from '../components/Search/Search'
 
 export default function MainContainer({currentUser}) {
   const [allAnimes, setAllAnimes] = useState([])
@@ -52,13 +53,12 @@ export default function MainContainer({currentUser}) {
     setAllAnimes((prevState) => prevState.filter((anime) => anime.id !== id))
   }
 
-
-
+  
   return (
     <div>
       <Switch>
         <Route path='/category'>
-          <AnimeCategory categories={allCategories}/>
+          <AnimeCategory allCategories={allCategories} allAnimes={allAnimes}/>
         </Route>
         <Route path='/anime/:id/edit'>
           <AnimeEdit allAnimes={allAnimes} allCategories={allCategories}  handleDelete={handleDelete} handleUpdate={handleUpdate}/>
@@ -73,7 +73,7 @@ export default function MainContainer({currentUser}) {
           <Created currentUser={currentUser}  allAnimes={allAnimes}/>
         </Route>
         <Route path='/home'>
-          <Home allAnimes={allAnimes}/>
+          <Home allCategories={allCategories} allAnimes={allAnimes}/>
         </Route>
       </Switch>
     </div>
