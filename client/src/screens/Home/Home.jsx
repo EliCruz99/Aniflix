@@ -38,7 +38,7 @@ export default function Home({ shuffle, allCategories, allAnimes }) {
           )
         })}
       </div>
-      <div className="flex justify-center container mx-auto ">
+      <div className="flex justify-center container mx-auto pb-4">
         <p className="border-b-4">Shounen</p>
         {category.map((anime) => (
            <Link to={`/anime/${anime.id}`} className='w-32 m-3  h-32'><img key={anime.id} src={anime.img_url} alt={anime.name} className="w-32  h-32" /></Link>
