@@ -12,7 +12,6 @@ export default function Footer() {
       <a href="https://www.linkedin.com/in/elijah-cruz" target="_blank" rel="noreferrer" >
         <FontAwesomeIcon icon={faLinkedin} className="ml-2 text-xl" />
        </a>
-
     </footer>
   )
 }
