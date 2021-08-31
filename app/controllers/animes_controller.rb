@@ -1,6 +1,6 @@
 class AnimesController < ApplicationController
   before_action :set_anime, only: [:show, :update, :destroy]
-  before_action :authorize_request, except: [:index,:show]
+  before_action :authorize_request, except: [:index, :show, :shuffle]
   # GET /animes
   def index
     @animes = Anime.all
@@ -37,6 +37,13 @@ class AnimesController < ApplicationController
   # DELETE /animes/1
   def destroy
     @anime.destroy
+  end
+
+  #  GET /anime/shuffle
+  def shuffle
+    @animes = Anime.all.shuffle
+
+    render json: @animes, include: :category
   end
 
   private
