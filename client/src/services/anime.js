@@ -43,3 +43,12 @@ export const deleteAnime = async (animeId) => {
     throw e
   }
 }
+
+export const getShuffle = async () => {
+  try {
+    const res = await api.get('/anime/shuffle')
+    return res.data
+  } catch (e) {
+    throw e
+  }
+}
