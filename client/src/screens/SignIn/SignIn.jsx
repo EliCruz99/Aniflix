@@ -17,7 +17,7 @@ export default function SignIn({ handleLogin }) {
     }))
   }
       return (
-        <form className="" onSubmit={(e) => {
+        <form className="container flex flex-col justify-center content-center container mx-auto" onSubmit={(e) => {
           e.preventDefault()
           handleLogin(formData)
           console.log(handleLogin())
