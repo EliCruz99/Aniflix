@@ -20,7 +20,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      animation: ['responsive', 'motion-safe', 'motion-reduce'],
+    },
   },
   plugins: [],
 }
