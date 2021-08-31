@@ -9,6 +9,7 @@ export default function Created({ currentUser, allAnimes }) {
 
   return (
     <div className=''>
+      <button class="transform motion-safe:hover:scale-110 perfers-reduced-motion" > Hover me </button>
       <p className="">{currentUser?.username}</p>
       <div className="flex flex-wrap justify-center">
       {userAnime.map((anime) => {
@@ -18,6 +19,7 @@ export default function Created({ currentUser, allAnimes }) {
         )
       })}
       </div>
+      
     </div>
   )
 }
