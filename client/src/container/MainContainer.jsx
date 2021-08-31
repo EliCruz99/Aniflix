@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 
-import { getAllAnime, postAnime, putAnime, deleteAnime } from '../services/anime'
+import { getAllAnime, postAnime, putAnime, deleteAnime, getShuffle } from '../services/anime'
 import { getAllCategories } from '../services/category'
 import AnimeCategory from '../screens/AnimeCategory/AnimeCategory'
 import AnimeCreate from '../screens/AnimeCreate/AnimeCreate'
@@ -10,11 +10,11 @@ import AnimeDetail from '../screens/AnimeDetail/AnimeDetail'
 import Created from '../screens/Created/Created'
 import Home from '../screens/Home/Home'
 import AnimeEdit from '../screens/AnimeEdit/AnimeEdit'
-import Search from '../components/Search/Search'
 
 export default function MainContainer({currentUser}) {
   const [allAnimes, setAllAnimes] = useState([])
   const [allCategories, setAllCategories] = useState([])
+  const [shuffle, setShuffle] = useState([])
   const history = useHistory()
 
   useEffect(() => {
@@ -31,6 +31,14 @@ export default function MainContainer({currentUser}) {
       setAllCategories(categoryList)
     }
     fetchCategory()
+  }, [])
+
+  useEffect(() => {
+    const aquireShuffle = async () => {
+      const shuffle = await getShuffle()
+      setShuffle(shuffle)
+    }
+    aquireShuffle()
   }, [])
   
   const handleCreate = async (formData) => {
@@ -73,7 +81,7 @@ export default function MainContainer({currentUser}) {
           <Created currentUser={currentUser}  allAnimes={allAnimes}/>
         </Route>
         <Route path='/home'>
-          <Home allCategories={allCategories} allAnimes={allAnimes}/>
+          <Home shuffle={shuffle} allCategories={allCategories} allAnimes={allAnimes}/>
         </Route>
       </Switch>
     </div>
