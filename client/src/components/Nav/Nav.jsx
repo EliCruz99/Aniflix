@@ -5,8 +5,8 @@ export default function Nav(props) {
   const {currentUser, handleLogout} = props
 
   return (
-  <div className='z-10 bg-palette-darkCard shadow-lg'>
-      <nav className='flex xl:flex-row xl:justify-evenly xl:flex-nowrap align-baseline'>
+  <div className='z-10 sm:bg-palette-darkCard shadow-lg'>
+      <nav className='flex xl:flex-row xl:justify-evenly xl:flex-nowrap align-baseline md:bg-palette-backgroundLight lg:bg-black'>
         <Link className='mr-1 text-palette-font text-2xl' to='/home'>Aniflix</Link>
         <Link to='/category' className='ml-1 text-palette-font'>Categories</Link>
       {currentUser ? (
@@ -15,8 +15,8 @@ export default function Nav(props) {
           <button className="border ml-6" onClick={handleLogout}>Logout</button>
         </div>
         ) : (
-            <div className="mr-1">
-              <Link to='/login'>Login</Link>
+            <div className="text-palette-font mr-1">
+              <Link to='/login' className='mr-4'>Login</Link>
               <Link to='/register'>Register</Link>
             </div>
         )}
