@@ -8,7 +8,6 @@ export default function AnimeCategory({allCategories, allAnimes}) {
   
   const handleChange = (e) => {
     setCategory(e.target.value)
-    console.log(category)
   }
   
   const categories = allCategories.map((cat) => <option key={cat.id} value={cat.name}>{cat.name}</option> )
