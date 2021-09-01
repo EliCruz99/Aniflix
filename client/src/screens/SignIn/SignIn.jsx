@@ -5,9 +5,7 @@ export default function SignIn({ handleLogin }) {
     username: '',
     password: ''
   })
-  const [error, setError] = useState('')
 
-  console.log()
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -20,7 +18,6 @@ export default function SignIn({ handleLogin }) {
         <form className="container flex flex-col justify-center content-center container mx-auto" onSubmit={(e) => {
           e.preventDefault()
           handleLogin(formData)
-          console.log(handleLogin())
         }}>
           <label className=''>
             <h3 className="">Username:</h3>

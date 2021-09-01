@@ -23,7 +23,7 @@ export default function AnimeDetail({currentUser}) {
 
   return (
     <>
-      <div className='flex pb-28 pt-20 '>
+      <div className='flex md:flex-row sm:flex-col pb-28 pt-20 '>
         <img src={currentAnime?.img_url} alt={currentAnime?.name} className=" shadow-lg w-72  h-96 mx-auto"/>
         <div className="flex flex-col px-64 justify-start mx-auto">
           {userCreatedAnime()}
