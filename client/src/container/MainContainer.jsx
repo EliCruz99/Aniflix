@@ -81,7 +81,7 @@ export default function MainContainer({currentUser}) {
           <Created currentUser={currentUser}  allAnimes={allAnimes}/>
         </Route>
         <Route path='/home'>
-          <Home shuffle={shuffle} allCategories={allCategories} allAnimes={allAnimes}/>
+          <Home shuffle={shuffle} allAnimes={allAnimes}/>
         </Route>
       </Switch>
     </div>

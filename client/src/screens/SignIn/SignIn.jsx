@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 export default function SignIn({ handleLogin }) {
   const [formData, setFormData] = useState({
     username: '',

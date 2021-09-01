@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {Carousel} from 'react-carousel-minimal'
 
-export default function Home({ shuffle, allCategories, allAnimes }) {
+export default function Home({ shuffle, allAnimes }) {
   
 
   const category = allAnimes.filter((anime) => anime.category.name === 'Fantasy')
@@ -14,8 +14,7 @@ export default function Home({ shuffle, allCategories, allAnimes }) {
     <>
       <div className="flex justify-center">
         <Carousel
-          data={images}
-          time={2000}
+            data={images}
             width="850px"
             height="500px"
             radius="10px"
@@ -24,8 +23,8 @@ export default function Home({ shuffle, allCategories, allAnimes }) {
             pauseIconColor="white"
             pauseIconSize="40px"
             slideBackgroundColor="darkgrey"
-          slideImageFit="cover"
-          time={4000}
+            slideImageFit="cover"
+            time={4000}
         />
       </div>
       <div className="flex flex-col container mx-auto mb-3">
