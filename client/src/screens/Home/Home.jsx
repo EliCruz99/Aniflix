@@ -18,8 +18,6 @@ export default function Home({ shuffle, allAnimes }) {
             width="850px"
             height="500px"
             radius="10px"
-            automatic={true}
-            dots={true}
             pauseIconColor="white"
             pauseIconSize="40px"
             slideBackgroundColor="darkgrey"

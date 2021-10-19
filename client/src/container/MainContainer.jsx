@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
-
 import { getAllAnime, postAnime, putAnime, deleteAnime, getShuffle } from '../services/anime'
 import { getAllCategories } from '../services/category'
 import AnimeCategory from '../screens/AnimeCategory/AnimeCategory'
