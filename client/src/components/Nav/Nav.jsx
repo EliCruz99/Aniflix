@@ -7,7 +7,7 @@ export default function Nav(props) {
   return (
   <div className='z-10 sm:bg-palette-darkCard shadow-lg'>
       <nav className='flex xl:flex-row xl:justify-evenly xl:flex-nowrap align-baseline md:bg-palette-backgroundLight lg:bg-black'>
-        <Link className='mr-1 text-palette-font text-2xl' to='/home'>Aniflix</Link>
+        <Link className='mr-1 text-palette-font text-2xl' to='/'>Aniflix</Link>
         <Link to='/category' className='ml-1 text-palette-font'>Categories</Link>
       {currentUser ? (
         <div className='flex text-palette-font'>
