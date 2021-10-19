@@ -80,7 +80,7 @@ export default function MainContainer({currentUser}) {
         <Route path={`/profile/${currentUser?.username}`}>
           <Created currentUser={currentUser}  allAnimes={allAnimes}/>
         </Route>
-        <Route path='/home'>
+        <Route path='/'>
           <Home shuffle={shuffle} allAnimes={allAnimes}/>
         </Route>
       </Switch>
