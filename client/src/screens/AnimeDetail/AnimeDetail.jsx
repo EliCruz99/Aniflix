@@ -1,3 +1,4 @@
+import React from 'react'
 import { useParams } from 'react-router'
 import { getAnime } from '../../services/anime'
 import { useState, useEffect } from 'react'
