@@ -30,7 +30,7 @@ export default function AnimeDetail({currentUser}) {
           {userCreatedAnime()}
           <p className="shadow bg-palette-lightCard text-palette-fontOnDark mb-10 text-2xl whitespace-nowrap text-left tracking-wide">{currentAnime?.name}</p>
           <p className="shadow bg-palette-lightCard text-palette-fontOnDark mb-10 text-2xl items-baseline tracking-wide">{currentAnime?.category.name}</p>
-          <a href={currentAnime?.watch_link} target="_blank" rel="noreferrer" className="shadow text-2xl text-white bg-palette-darkCard whitespace-nowrap "><button className="w-40">Watch Now!</button></a>
+          <a href={currentAnime?.watch_link} target="_blank" rel="noopener noreferrer" className="shadow text-2xl text-white bg-palette-darkCard whitespace-nowrap "><button className="w-40">Watch Now!</button></a>
         </div>
       </div>
       <div className="flex flex-col justify-start bg-palette-lightCard">
