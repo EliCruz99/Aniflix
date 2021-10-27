@@ -9,7 +9,7 @@ export default function Footer() {
       <a href="https://github.com/EliCruz99" target="_blank" rel="noopener noreferrer" >
         <FontAwesomeIcon icon={faGithub} className="mr-2 text-xl" />
       </a>
-      <a href="https://www.linkedin.com/in/elijah-cruz" target="_blank" rel="oopener noreferrer" >
+      <a href="https://www.linkedin.com/in/elijah-cruz" target="_blank" rel="noopener noreferrer" >
         <FontAwesomeIcon icon={faLinkedin} className="ml-2 text-xl" />
        </a>
     </footer>
