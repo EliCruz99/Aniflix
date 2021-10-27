@@ -25,12 +25,14 @@ export default function AnimeDetail({currentUser}) {
   return (
     <>
       <div className='flex md:flex-row sm:flex-col pb-28 pt-20 '>
-        <img src={currentAnime?.img_url} alt={currentAnime?.name} className=" shadow-lg w-72  h-96 mx-auto"/> {/* eslint-disable-line no-use-before-define */}
+        {/* eslint-disable-next-line */}
+        <img src={currentAnime?.img_url} alt={currentAnime?.name} className=" shadow-lg w-72  h-96 mx-auto"/> 
         <div className="flex flex-col px-64 justify-start mx-auto">
           {userCreatedAnime()}
           <p className="shadow bg-palette-lightCard text-palette-fontOnDark mb-10 text-2xl whitespace-nowrap text-left tracking-wide">{currentAnime?.name}</p>
           <p className="shadow bg-palette-lightCard text-palette-fontOnDark mb-10 text-2xl items-baseline tracking-wide">{currentAnime?.category.name}</p>
-          <a href={currentAnime?.watch_link} target="_blank" rel="noopener noreferrer" className="shadow text-2xl text-white bg-palette-darkCard whitespace-nowrap "><button className="w-40">Watch Now!</button></a> {/* eslint-disable-line no-use-before-define */}
+          {/* eslint-disable-next-line */}
+          <a href={currentAnime?.watch_link} target="_blank" rel="noopener noreferrer" className="shadow text-2xl text-white bg-palette-darkCard whitespace-nowrap "><button className="w-40">Watch Now!</button></a> 
         </div>
       </div>
       <div className="flex flex-col justify-start bg-palette-lightCard">
