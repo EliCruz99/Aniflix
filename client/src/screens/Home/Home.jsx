@@ -32,7 +32,8 @@ export default function Home({ shuffle, allAnimes }) {
           {shuffle.slice(0,15).map((anime) => {
             return (
               <div className="">
-                <Link key={anime.id} to={`/anime/${anime.id}`} className=''><img src={anime.img_url} alt={anime.name} className="w-32  h-32 shadow-xl" /></Link>
+                <Link key={anime.id} to={`/anime/${anime.id}`} className=''><img
+                key={anime.id}  src={anime.img_url} alt={anime.name} className="w-32  h-32 shadow-xl" /></Link>
               </div>
             )
           })}
@@ -41,7 +42,7 @@ export default function Home({ shuffle, allAnimes }) {
         <p className="text-left border-b-4">Fantasy</p>
       <div className="flex justify-center container mx-auto pb-4">
         {category.map((anime) => (
-           <Link key={anime.id} to={`/anime/${anime.id}`} className='w-32 m-3  h-32'><img src={anime.img_url} alt={anime.name} className="w-32  h-32" /></Link>
+           <Link key={anime.id} to={`/anime/${anime.id}`} className='w-32 m-3  h-32'><img key={anime.id} src={anime.img_url} alt={anime.name} className="w-32  h-32" /></Link>
         ))}
       </div>
       </div>
