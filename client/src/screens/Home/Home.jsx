@@ -1,29 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {Carousel} from 'react-carousel-minimal'
+import Carousel from '../../components/Carousel/Carousel'
 
 export default function Home({ shuffle, allAnimes }) {
   
 
   const category = allAnimes.filter((anime) => anime.category.name === 'Fantasy')
-  const images = shuffle.slice(16, 25).map((anime) => {
-    return { image: anime.img_url, caption: anime.name }
-  })
 
   return (
     <>
       <div className="flex justify-center">
-        <Carousel
-            data={images}
-            width="850px"
-            height="500px"
-            radius="10px"
-            pauseIconColor="white"
-            pauseIconSize="40px"
-            slideBackgroundColor="darkgrey"
-            slideImageFit="cover"
-            time={4000}
-        />
+        <Carousel shuffle={shuffle}/>
       </div>
       <div className="flex flex-col container mx-auto mb-3">
         <p className="text-left border-b-4">Trending</p>
