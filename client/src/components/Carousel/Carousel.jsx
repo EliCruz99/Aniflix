@@ -21,11 +21,11 @@ export default function Carousel({shuffle}) {
 
   return (
     <section className='relative flex justify-center content-center'>
-      <FaArrowAltCircleLeft onClick={prevSlide} className='absolute top-2/4 left-1 text-5xl z-10 cursor-pointer select-none'/>
-      <FaArrowAltCircleRight onClick={nextSlide} className='absolute top-2/4 right-1 text-5xl z-10 cursor-pointer select-none'/>
+      <FaArrowAltCircleLeft onClick={prevSlide} className='absolute top-2/4 inset-y-0 -left-8 text-5xl z-10 cursor-pointer select-none'/>
+      <FaArrowAltCircleRight onClick={nextSlide} className='absolute top-2/4 inset-y-0 -right-8 text-5xl z-10 cursor-pointer select-none'/>
       {shuffle?.slice(16, 25).map((anime, index) => {
         return (
-          <div key={index} className={index === currentImg ? 'slide active': 'slide'}>
+          <div key={index} className={index === currentImg ? 'opacity-1 duration-100 transform scale-90': 'opacity-0 duration-100'}>
             {index === currentImg && (<img  src={anime.img_url} alt={anime.name} className='rounded' />)}
             
           </div>
