@@ -149,27 +149,27 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-|Basic BE Models      |    H     |     1 hr      |          |        |
-|BE CRUD              |    H     |   2 hrs       |          |        |
-|BE auth              |    L     |    1 hr       |          |        |
-|Seed Data            |    L     |    2 hrs      |          |        |
-|FE Component Hierarchy|  H      |      1 hr     |          |        |
-|FE CRUD              |    H     |     3hrs      |          |        |
-|FE Routing           |    M     |      1.5hrs   |          |        |
-|FE State Management  |    H     |     2hrs      |          |        |
-|Favorites Page Layout|    M     |     2hrs      |          |        |
-|Landing Page Layout  |    M     |     2hrs      |          |        |
-|Detail Page Layout   |    M     |      2hrs     |          |        |
-|Edit Page Layout     |    M     |      3hrs     |          |        |
-|Create Page Layout   |    M     |      3hrs     |          |        |
-|Sign In / Up Layout  |    M     |       2hrs    |          |        |
-|Basic Tailwind CSS   |    H     |       4hrs    |          |        |
-|Advanced Nav TailwindCSS|    M  |       3hrs    |          |        |
-|Advanced Landing TailwindCSS|   M|       3hrs   |          |        |
-|Advanced Edit Page TailwindCSS|   M|       3hrs |          |        |
-|Advanced Create Page TailwindCSS|   M|      3hrs|          |        |
-|Advanced Favorites Page TailwindCSS| M|     3hrs|          |        |
-| TOTAL               |          |    51.5 hrs   |          |        |
+|Basic BE Models      |    H     |     1 hr      |    1 hr      |   1 hr     |
+|BE CRUD              |    H     |   2 hrs       |    2 hrs      |   2 hrs     |
+|BE auth              |    L     |    1 hr       |     1 hr      |    1 hr     |
+|Seed Data            |    L     |    2 hrs      |     2hrs      |   2hrs      |
+|FE Component Hierarchy|  H      |      1 hr     |   1 hr        |    1 hr     |
+|FE CRUD              |    H     |     3hrs      |    3hrs      |    3hrs    |
+|FE Routing           |    M     |      1.5hrs   |    1.5hrs      |  1.5hrs      |
+|FE State Management  |    H     |     2hrs      |  2hrs         |  2hrs       |
+|Favorites Page Layout|    M     |     2hrs      |    2hrs       |  2hrs       |
+|Landing Page Layout  |    M     |     2hrs      |     2hrs      |    2hrs     |
+|Detail Page Layout   |    M     |      2hrs     |     2hrs      |    2hrs     |
+|Edit Page Layout     |    M     |      3hrs     |  3hrs        |   3hrs     |
+|Create Page Layout   |    M     |      3hrs     |  3hrs        |   3hrs     |
+|Sign In / Up Layout  |    M     |       2hrs    |    2hrs       |   2hrs      |
+|Basic Tailwind CSS   |    H     |       4hrs    |     4hrs      |     4hrs    |
+|Advanced Nav TailwindCSS|    M  |       3hrs    |     3hrs      |   3hrs      |
+|Advanced Landing TailwindCSS|   M|       3hrs   |     3hrs      |    3hrs     |
+|Advanced Edit Page TailwindCSS|   M|       3hrs |    3hrs       |    3hrs     |
+|Advanced Create Page TailwindCSS|   M|      3hrs|     3hrs      |    3hrs     |
+|Advanced Favorites Page TailwindCSS| M|     3hrs|      3hrs     |     3hrs    |
+| TOTAL               |          |    51.5 hrs   |   51.5 hrs        |  51.5 hrs       |
 
 <br>
 
